@@ -1,0 +1,18 @@
+1.安装触摸屏驱动
+	cd  /mnt/hgfs/embed/Lcd/event_drv
+	make
+	sudo  insmod  event_drv.ko
+	
+2.安装屏幕驱动
+	cd  /mnt/hgfs/embed/Lcd/mmap_drv
+	make
+	sudo  insmod  mmp_drv.ko
+	
+3.运行模拟器
+	cd  /mnt/hgfs/embed/Lcd
+	sudo  ./VTSLcd
+	
+4.打开新的终端(Ctrl+Alt+T)
+	cd  /mnt/hgfs/embed/Lcd/lcd_event
+	gcc lcd_event_ui.c bmp.c  -o  lcd_event_ui
+	sudo  ./lcd_event_ui
